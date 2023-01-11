@@ -13,7 +13,7 @@ class Solution {
             myStringList.add(i, String.valueOf(my_string.charAt(i)));
         }
 
-        myStringList = myStringList.stream().filter(s -> s.matches("[^aeiou]$")).collect(Collectors.toList()); //.toList()와 차이??
+        myStringList = myStringList.stream().filter(s -> s.matches("[^aeiou]$")).collect(Collectors.toList());
 
         return String.join("", myStringList);
     }
