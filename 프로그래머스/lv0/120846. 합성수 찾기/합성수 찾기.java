@@ -1,18 +1,17 @@
 class Solution {
 public int solution(int n) {
         int answer = 0;
-        int cnt = 2;
 
         for(int i = 2; i <= n; i++) {
-            for(int j = 2; j < i; j++) {
-                if(i % j == 0) {
-                    cnt++;
+            int limit = (int) Math.sqrt(i);
+            boolean isComposite = false;
+            for (int j = 2; j <= limit; j++) {
+                if (i % j == 0) {
+                    isComposite = true;
+                    break;
                 }
             }
-            if(cnt >= 3) {
-                answer++;
-            }
-            cnt = 2;
+            if(isComposite) answer++;
         }
         return answer;
     }
