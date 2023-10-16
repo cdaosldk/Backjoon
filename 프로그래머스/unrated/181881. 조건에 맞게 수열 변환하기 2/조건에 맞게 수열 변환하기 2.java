@@ -6,8 +6,8 @@ class Solution {
         int[] arrTmp2;
 
         int answer = 0;
-        while (true) {
-            arrTmp2 = Arrays.copyOf(arrTmp, arrTmp.length); // 현재 배열 복사
+        do {
+            arrTmp2 = Arrays.copyOf(arrTmp, arrTmp.length);
 
             for (int i = 0; i < arrTmp.length; i++) {
                 if (arrTmp[i] >= 50 && arrTmp[i] % 2 == 0) {
@@ -18,10 +18,7 @@ class Solution {
             }
             answer++;
 
-            if (Arrays.equals(arrTmp, arrTmp2)) {
-                break;
-            }
-        }
+        } while (!Arrays.equals(arrTmp, arrTmp2));
 
         return answer - 1;
     }
